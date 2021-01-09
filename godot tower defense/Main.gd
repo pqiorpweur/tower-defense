@@ -5,6 +5,7 @@
 #feature sell tower
 #upgrade tower
 extends Node
+export(PackedScene) var testwave
 export(PackedScene) var Tower
 export(PackedScene) var Tower2
 export(PackedScene) var Tower3
@@ -52,6 +53,7 @@ func _ready():
 	$enemyPath.remove_child(pathFollower)
 	pathFollower.queue_free()
 	waveList = [Wave1, Wave2]
+#	waveList = [testwave, testwave, testwave]
 	loadWave(waveList.pop_front())
 	
 	

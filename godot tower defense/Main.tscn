@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Main.gd" type="Script" id=1]
 [ext_resource path="res://Tower.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tower4.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tower2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://testwave.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Tower3.tscn" type="PackedScene" id=8]
 [ext_resource path="res://UI.tscn" type="PackedScene" id=9]
 [ext_resource path="res://map.jpg" type="Texture" id=11]
@@ -13,6 +14,7 @@
 
 [node name="Main" type="Node"]
 script = ExtResource( 1 )
+testwave = ExtResource( 5 )
 Tower = ExtResource( 2 )
 Tower2 = ExtResource( 4 )
 Tower3 = ExtResource( 8 )

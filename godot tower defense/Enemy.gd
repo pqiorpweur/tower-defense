@@ -15,8 +15,7 @@ signal takeDamage
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var main = get_parent().get_parent()
-	self.connect("takeDamage", main, "enemyDamage")
-	self.connect("moneySignal", main, "enemyDied")
+
 	loop = false
 	
 
@@ -25,7 +24,8 @@ func _ready():
 func _process(delta):
 	var previous = offset
 	offset+=speed*delta
-	if offset == previous:
+#	print(previous, " ", offset, " ", delta)
+	if offset == previous and delta != 0:
 		emit_signal("takeDamage", damage)
 		queue_free()
 	$Particles2D.global_rotation = 0
