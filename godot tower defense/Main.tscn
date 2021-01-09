@@ -1,0 +1,49 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Main.gd" type="Script" id=1]
+[ext_resource path="res://Tower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Tower4.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Tower2.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tower3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=9]
+[ext_resource path="res://map.jpg" type="Texture" id=11]
+[ext_resource path="res://Wave1.tscn" type="PackedScene" id=12]
+[ext_resource path="res://curve.tres" type="Curve2D" id=13]
+[ext_resource path="res://Wave2.tscn" type="PackedScene" id=14]
+
+[node name="Main" type="Node"]
+script = ExtResource( 1 )
+Tower = ExtResource( 2 )
+Tower2 = ExtResource( 4 )
+Tower3 = ExtResource( 8 )
+Tower4 = ExtResource( 3 )
+Wave1 = ExtResource( 12 )
+Wave2 = ExtResource( 14 )
+minDistanceTower = 25
+minDistancePath = 50
+money = 10000
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1022.0
+margin_bottom = 597.0
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="enemyPath" type="Path2D" parent="."]
+position = Vector2( 1.7077, 0 )
+scale = Vector2( 0.998123, 1 )
+curve = ExtResource( 13 )
+
+[node name="UI" parent="." instance=ExtResource( 9 )]
+margin_left = -1.58917
+margin_top = 1.05946
+margin_right = -1.58917
+margin_bottom = 1.05945
+[connection signal="NextWave" from="UI" to="." method="_on_UI_NextWave"]
+[connection signal="TowerCreate1" from="UI" to="." method="_on_UI_TowerCreate1"]
+[connection signal="TowerCreate2" from="UI" to="." method="_on_UI_TowerCreate2"]
+[connection signal="TowerCreate3" from="UI" to="." method="_on_UI_TowerCreate3"]
+[connection signal="TowerCreate4" from="UI" to="." method="_on_UI_TowerCreate4"]

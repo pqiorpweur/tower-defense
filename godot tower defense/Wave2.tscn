@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Enemy2.tscn" type="PackedScene" id=1]
+[ext_resource path="res://WaveSetup.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Enemy4.tscn" type="PackedScene" id=3]
+
+[node name="Wave2" instance=ExtResource( 2 )]
+
+[node name="Enemy2" parent="." index="0" instance=ExtResource( 1 )]
+position = Vector2( -36.4269, 321.897 )
+rotation = 7.77511e-05
+offset = 4045.16
+
+[node name="Enemy" parent="." index="1" instance=ExtResource( 3 )]
+position = Vector2( -36.4269, 321.897 )
+rotation = 7.77511e-05
+offset = 4045.16
+
+[node name="Enemy3" parent="." index="2" instance=ExtResource( 3 )]
+position = Vector2( -90.1872, 321.894 )
+rotation = 7.08395e-05
+offset = 3990.5
+
+[node name="Enemy4" parent="." index="3" instance=ExtResource( 3 )]
+position = Vector2( -144.461, 321.89 )
+rotation = 8.62273e-05
+offset = 3935.83

@@ -1,0 +1,91 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Button.gd" type="Script" id=1]
+[ext_resource path="res://Tower.tscn" type="PackedScene" id=2]
+[ext_resource path="res://UI.gd" type="Script" id=3]
+[ext_resource path="res://Tower3.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Tower4.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Tower2.tscn" type="PackedScene" id=6]
+
+[node name="UI" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Tower1Button" type="Button" parent="."]
+margin_right = 12.0
+margin_bottom = 20.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Tower = ExtResource( 2 )
+TowerName = "Tower 1"
+
+[node name="Tower2Button" type="Button" parent="."]
+margin_top = 20.0
+margin_right = 12.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Tower = ExtResource( 6 )
+TowerName = "Tower 2"
+
+[node name="Tower3Button" type="Button" parent="."]
+margin_left = 0.210236
+margin_top = 40.0
+margin_right = 12.2102
+margin_bottom = 60.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Tower = ExtResource( 4 )
+TowerName = "Tower 3"
+
+[node name="Tower4Button" type="Button" parent="."]
+margin_top = 60.0
+margin_right = 12.0
+margin_bottom = 80.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+Tower = ExtResource( 5 )
+TowerName = "Tower 4"
+
+[node name="moneyDisplay" type="Label" parent="."]
+margin_left = 0.446198
+margin_top = 80.8226
+margin_right = 40.4462
+margin_bottom = 94.8226
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="healthDisplay" type="Label" parent="."]
+margin_top = 100.0
+margin_right = 40.0
+margin_bottom = 114.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NextWaveButton" type="Button" parent="."]
+margin_top = 120.0
+margin_right = 12.0
+margin_bottom = 140.0
+text = "Next Wave"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Tower1Button" to="." method="_on_Tower1Button_pressed"]
+[connection signal="pressed" from="Tower2Button" to="." method="_on_Tower2Button_pressed"]
+[connection signal="pressed" from="Tower3Button" to="." method="_on_Tower3Button_pressed"]
+[connection signal="pressed" from="Tower4Button" to="." method="_on_Tower4Button_pressed"]
+[connection signal="pressed" from="NextWaveButton" to="." method="_on_NextWaveButton_pressed"]
